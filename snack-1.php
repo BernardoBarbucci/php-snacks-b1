@@ -16,6 +16,12 @@ $partite = array(
     'Happy Casa Brindisi -  Umana Reyer Venezia | 88-67'
 );
 
+$matches = array[
+    'team 1' => 'Olimpia Milano',
+    'team 2' => 'Cantù',
+    
+]
+
 // var_dump($partite);
 
 // creo un foreach per stampare gli elements degli array 
