@@ -16,6 +16,11 @@ $partite = array(
     'Happy Casa Brindisi -  Umana Reyer Venezia | 88-67'
 );
 
-var_dump($partite);
+// var_dump($partite);
+
+// creo un foreach per stampare gli elements degli array 
+foreach ($partite as $partita) {
+    echo $partita . '<br>';
+}
 
 ?>
