@@ -9,6 +9,22 @@ $name = '';
 $mail = '';
 $age = '';
 
+$negated = '';
+$granted = '';
+
+// check se c'è il modulo 
+if (isset($_GET['name'])) {
+
+    // recupero name 
+    $name = $_GET['name'];
+
+    if (strlen($name) > 3) {
+        $granted = 'Accesso riuscito';
+    } else {
+        $negated = 'Accesso negato';
+    }
+}
+
 ?>
 
 <section>
@@ -32,5 +48,9 @@ $age = '';
             <input type="text" id="age" name="age">
             <button type="submit">Send it</button>
         </form>
+    </div>
+    <div>
+        <?php echo $negated; ?>
+        <?php echo $granted; ?>
     </div>
 </section>
