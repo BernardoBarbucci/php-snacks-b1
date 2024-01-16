@@ -6,4 +6,9 @@ if (isset($_GET['firstValue']) && isset($_GET['secondValue'])) {
     $secondValue = floatval(($_GET['secondValue']));
 
     $media = ($firstValue + $secondValue) / 2;
+
+    $result = array('media' => $media);
+    echo json_encode($result);
+} else {
+    echo 'nada, cè qualcosa di sbagliato';
 }
