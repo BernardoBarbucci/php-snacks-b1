@@ -7,8 +7,9 @@ WHERE `surname` LIKE '%o';
 
 - Selezionare tutti gli appelli di esame con voto medio piu' alto di 28
 
-
-
+SELECT *
+FROM `exam_student`
+WHERE `vote` > 28;
 
 
 - Selezionare tutti gli insegnanti che hanno la lettera s nel nome e il cui 
