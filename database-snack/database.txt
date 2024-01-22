@@ -7,9 +7,11 @@ WHERE `surname` LIKE '%o';
 
 - Selezionare tutti gli appelli di esame con voto medio piu' alto di 28
 
-SELECT *
+SELECT AVG ('vote'), `exam_id`
 FROM `exam_student`
-WHERE `vote` > 28;
+GROUP BY `exam_id`
+HAVING `vote` > 28;
+                        (da ricontrollare)
 
 
 - Selezionare tutti gli insegnanti che hanno la lettera s nel nome e il cui 
