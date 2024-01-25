@@ -45,5 +45,6 @@ class Pokemon
 
 $charizard = new Pokemon();
 $charizard->setAttack(75);
-$charizard->setdefense(55);
+$charizard->setDefense(55);
 echo $charizard->getAttack();
+echo $charizard->getDefense();
