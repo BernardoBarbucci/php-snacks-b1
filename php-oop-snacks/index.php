@@ -15,8 +15,8 @@ class Pokemon
     public $tipo;
     public $forza;
     public $attacco = 0;
-    public $difesa;
-
+    public $difesa = 0;
+    // prendi ed attribuisci l'attacco
     public function setAttack($potenza)
     {
         if ($potenza > 50) {
@@ -28,8 +28,22 @@ class Pokemon
     {
         return $this->attacco;
     }
+
+    // prendi ed attribuisci la difesa
+    public function setDefense($scudo)
+    {
+        if ($scudo > 50) {
+            $this->difesa += 70;
+        }
+    }
+
+    public function getDefense()
+    {
+        return $this->difesa;
+    }
 }
 
 $charizard = new Pokemon();
 $charizard->setAttack(75);
+$charizard->setdefense(55);
 echo $charizard->getAttack();
