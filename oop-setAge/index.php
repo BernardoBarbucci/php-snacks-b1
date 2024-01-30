@@ -28,17 +28,19 @@ $person = new Persona();
 // form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        // check se age èstato inviato
-        $newAge = $_POST['age'];
-        $person->setAge((int)$newAge);
-        // stampa
-        echo 'Età inserita correttamente:' . $person->age;
-    } else {
-        throw new Exception('Non hai inserito nulla o la tua età non è stata presa correttamente!');
+        // Verificare se il campo "age" è stato inviato e non è vuoto
+        if (isset($_POST['age']) && $_POST['age'] !== '') {
+
+            $newAge = $_POST['age'];
+            $person->setAge((int)$newAge);
+            // stampa
+            echo 'Età inserita correttamente: ' . $person->age;
+        } else {
+            throw new Exception('Non hai inserito nulla o la tua età non è stata presa correttamente!');
+        }
     } catch (Exception $e) {
         echo 'Errore: ' . $e->getMessage();
     }
-
 }
 
 
