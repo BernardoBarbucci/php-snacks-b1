@@ -5,6 +5,10 @@
 // della classe Persona, che accetti esclusivamente un numero intero. 
 // Se il numero inserito come argomento non dovesse essere un numero intero: allora lanciare un'eccezione!
 
+// Parte 2:
+// Includendo con try e catch una chiamata a setAge con una stringa come argomento, 
+// catturare l'eccezione e invece di emettere un errore bloccante, scrivere in pagina il messaggio di errore.
+
 class Persona
 {
     public $age;
@@ -26,10 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // check se age èstato inviato
         $newAge = $_POST['age'];
-        $person->setAge($newAge);
+        $person->setAge((int)$newAge);
         // stampa
         echo 'Età inserita correttamente:' . $person->age;
-    } else 
+    } else {
+        throw new Exception('Non hai inserito nulla o la tua età non è stata presa correttamente!');
+    } catch (Exception $e) {
+        echo 'Errore: ' . $e->getMessage();
+    }
 
 }
 
