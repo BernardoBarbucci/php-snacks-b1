@@ -19,6 +19,13 @@ class Persona
     }
 }
 
+$person = new Persona();
+
+// form
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+}
+
+
 
 ?>
 
