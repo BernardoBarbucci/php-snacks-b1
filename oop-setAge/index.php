@@ -8,4 +8,13 @@
 class Persona
 {
     public $age;
+
+    public function setAge($ageInfo)
+    {
+        // lancia l'exception
+        if (is_int($ageInfo)) {
+            throw new Exception('inserisci un numero intero!');
+        }
+        $this->age = $ageInfo;
+    }
 }
