@@ -23,6 +23,14 @@ $person = new Persona();
 
 // form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        // check se age èstato inviato
+        $newAge = $_POST['age'];
+        $person->setAge($newAge);
+        // stampa
+        echo 'Età inserita correttamente:' . $person->age;
+    } else 
+
 }
 
 
